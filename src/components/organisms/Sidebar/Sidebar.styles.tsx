@@ -10,7 +10,11 @@ export const SidebarWrapper = styled.div<SidebarWrapperInterface>`
   position: absolute;
   top: 72px;
   right: 0;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.darkerWhite};
   transform: translateX(${({ isOpen }) => (isOpen ? '0' : '100%')});
   transition: transform 0.4s ease;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
