@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
   
   a, input, button, textarea {
