@@ -1,12 +1,14 @@
 import React from 'react';
-import { GlobalStyles } from './assets/styles/GlobalStyles';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from 'assets/styles/GlobalStyles';
+import { theme } from 'assets/styles/theme';
 
 const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <h1>Hello World</h1>
-    </>
+    </ThemeProvider>
   );
 };
 

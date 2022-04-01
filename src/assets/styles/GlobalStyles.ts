@@ -12,9 +12,11 @@ export const GlobalStyles = createGlobalStyle`
   
   body {
     font-family: 'Jost', sans-serif;
-    background-color: red;
+    background-color: ${({ theme }) => theme.colors.darkerWhite};
     width: 100%;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
   
   a, input, button, textarea {
