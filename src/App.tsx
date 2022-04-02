@@ -6,6 +6,7 @@ import Navigation from 'components/organisms/Navigation/Navigation';
 import Sidebar from 'components/organisms/Sidebar/Sidebar';
 import NavigationProvider from 'providers/NavigationProvider';
 import Background from 'components/atoms/Background/Background';
+import SuggestionsList from 'components/organisms/SuggestionsList/SuggetsionsList';
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
         <Background />
         <Sidebar />
       </NavigationProvider>
-      <div>h1</div>
+      <SuggestionsList />
     </ThemeProvider>
   );
 };

@@ -8,6 +8,7 @@ export const FilterWrapper = styled.button`
   border: none;
   border-radius: 12px;
   padding: 5px 16px;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.hover};

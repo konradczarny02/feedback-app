@@ -6,7 +6,7 @@ const Filters = () => {
   return (
     <FiltersWrapper>
       {filtersData.map(({ filterName }) => (
-        <Filter filterName={filterName} />
+        <Filter key={filterName} filterName={filterName} />
       ))}
     </FiltersWrapper>
   );
