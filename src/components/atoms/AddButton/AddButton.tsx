@@ -1,21 +1,8 @@
 import styled from 'styled-components';
-
-export const AddButtonWrapper = styled.button`
-  width: 150px;
-  font-size: 13px;
-  font-weight: 700;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.pink};
-  border: none;
-  border-radius: 10px;
-`;
+import { AddButtonWrapper } from 'components/atoms/AddButton/AddButton.styles';
 
 const AddButton = () => {
-  return <AddButtonWrapper>+ Add Feedback</AddButtonWrapper>;
+  return <AddButtonWrapper to="/new-feedback">+ Add Feedback</AddButtonWrapper>;
 };
 
 export default AddButton;
