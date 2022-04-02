@@ -6,7 +6,7 @@ interface NavigationContextInterface {
 }
 
 type NavigationProviderProps = {
-  children: React.ReactElement[];
+  children: React.ReactNode[];
 };
 
 export const NavigationContext = createContext<NavigationContextInterface>({ isOpen: false, handleOpen: () => {} });
