@@ -7,6 +7,7 @@ import Sidebar from 'components/organisms/Sidebar/Sidebar';
 import NavigationProvider from 'providers/NavigationProvider';
 import Background from 'components/atoms/Background/Background';
 import SuggestionsList from 'components/organisms/SuggestionsList/SuggetsionsList';
+import Sort from 'components/organisms/Sort/Sort';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Background />
         <Sidebar />
       </NavigationProvider>
+      <Sort />
       <SuggestionsList />
     </ThemeProvider>
   );
