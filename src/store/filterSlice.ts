@@ -1,13 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type Filter = 'All' | 'Bug' | 'Feature' | 'Enhancement' | 'UI' | 'UX';
+export type FilterType = 'All' | 'Bug' | 'Feature' | 'Enhancement' | 'UI' | 'UX';
 
-const initialState: Filter = 'All';
+const initialState: { filter: FilterType } = {
+  filter: 'All',
+};
 
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
-  reducers: {},
+  reducers: {
+    change: (state, action: PayloadAction<FilterType>) => {
+      state.filter = action.payload;
+    },
+  },
 });
+
+export const { change } = filterSlice.actions;
 
 export default filterSlice.reducer;

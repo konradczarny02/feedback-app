@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { type Filter } from 'store/filterSlice';
+import { FilterType } from 'store/filterSlice';
 
-const filtersInitialState: Filter[] = ['All', 'UI', 'UX', 'Enhancement', 'Bug', 'Feature'];
+const filtersInitialState: FilterType[] = ['All', 'UI', 'UX', 'Enhancement', 'Bug', 'Feature'];
 
 export const filtersSlice = createSlice({
   name: 'filters',

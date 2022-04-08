@@ -1,20 +1,10 @@
 import { FilterWrapper } from 'components/atoms/Filter/Filter.styles';
+import { useAppDispatch } from 'store/hooks';
+import { change, FilterType } from 'store/filterSlice';
 
-type FilterProps = {
-  filterName: string;
-};
-
-const Filter = ({ filterName }: FilterProps) => {
-  return (
-    <FilterWrapper
-      onClick={(e) => {
-        const target = e.target as HTMLButtonElement;
-        console.log(target.textContent);
-      }}
-    >
-      {filterName}
-    </FilterWrapper>
-  );
+const Filter = ({ filterName }: { filterName: FilterType }) => {
+  const dispatch = useAppDispatch();
+  return <FilterWrapper onClick={() => dispatch(change(filterName))}>{filterName}</FilterWrapper>;
 };
 
 export default Filter;

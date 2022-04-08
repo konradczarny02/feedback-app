@@ -1,12 +1,13 @@
 import Filter from 'components/atoms/Filter/Filter';
-import { filtersData } from 'data/filtersData';
 import { FiltersWrapper } from 'components/molecules/Filters/Filters.styles';
+import { useAppSelector } from 'store/hooks';
 
 const Filters = () => {
+  const filters = useAppSelector((state) => state.filters);
   return (
     <FiltersWrapper>
-      {filtersData.map(({ filterName }) => (
-        <Filter key={filterName} filterName={filterName} />
+      {filters.map((filter) => (
+        <Filter key={filter} filterName={filter} />
       ))}
     </FiltersWrapper>
   );
