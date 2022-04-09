@@ -15,7 +15,7 @@ const SuggestionsList = () => {
     } else {
       setFilteredSuggestions(suggestions.filter((suggestion) => suggestion.type === filter.filter));
     }
-  }, [filter, suggestions]);
+  }, [filter]);
 
   return (
     <>
