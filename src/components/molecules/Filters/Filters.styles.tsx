@@ -14,4 +14,9 @@ export const FiltersWrapper = styled.div`
   & > * {
     margin: 0 4px;
   }
+
+  @media (min-width: 768px) {
+    height: 100%;
+    margin-top: 0;
+  }
 `;

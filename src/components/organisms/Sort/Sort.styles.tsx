@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styled from 'styled-components';
 
 export const SortWrapper = styled.div`
@@ -13,5 +14,37 @@ export const SortWrapper = styled.div`
     font-weight: 400;
     font-size: 14px;
     color: ${({ theme }) => theme.colors.white};
+  }
+
+  span {
+    display: none;
+  }
+
+  svg {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    height: 72px;
+    width: 90%;
+    border-radius: 10px;
+    margin: 40px auto 24px;
+    justify-content: flex-start;
+
+    span {
+      display: block;
+      font-size: 18px;
+      color: ${({ theme }) => theme.colors.white};
+      font-weight: 700;
+      margin: 0 36px 0 16px;
+    }
+
+    a {
+      margin-left: auto;
+    }
+
+    svg {
+      display: block;
+    }
   }
 `;

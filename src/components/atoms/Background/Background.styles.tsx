@@ -14,4 +14,8 @@ export const BackgroundWrapper = styled.div<BackgroundWrapperInterface>`
   z-index: 1;
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   transition: ${({ isOpen }) => (isOpen ? 'visibility 0s' : 'visibility 0s 0.4s')};
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

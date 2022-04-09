@@ -1,8 +1,8 @@
-import { NavWrapper } from './Navigation.styles';
+import { NavWrapper } from 'components/organisms/MobileNavigation/MobileNavigation.styles';
 import Name from 'components/atoms/Name/Name';
 import Hamburger from 'components/atoms/Hamburger/Hamburger';
 
-const Navigation = () => {
+const MobileNavigation = () => {
   return (
     <NavWrapper>
       <Name />
@@ -11,4 +11,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default MobileNavigation;

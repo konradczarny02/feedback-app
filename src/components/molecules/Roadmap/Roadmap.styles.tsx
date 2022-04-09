@@ -34,4 +34,9 @@ export const RoadmapWrapper = styled.div`
       opacity: 0.8;
     }
   }
+
+  @media (min-width: 768px) {
+    height: 100%;
+    margin-top: 0;
+  }
 `;

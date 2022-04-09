@@ -10,4 +10,8 @@ export const NavWrapper = styled.nav`
   align-items: center;
   background-image: url('${bg}');
   background-size: cover;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
