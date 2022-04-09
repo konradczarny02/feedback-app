@@ -15,9 +15,8 @@ const SuggestionsList = () => {
     } else {
       setFilteredSuggestions(suggestions.filter((suggestion) => suggestion.type === filter.filter));
     }
-  }, [filter]);
+  }, [filter, suggestions]);
 
-  console.log(filteredSuggestions, filter);
   return (
     <>
       {filteredSuggestions.length < 1 ? (
