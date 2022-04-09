@@ -17,10 +17,11 @@ const Form = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<FormInterface>();
   const onSubmit: SubmitHandler<FormInterface> = ({ title, description, type }) => {
-    console.log(title, description, type);
     dispatch(add({ title, type, description }));
+    reset();
   };
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)} errors={errors}>
