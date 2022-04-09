@@ -18,7 +18,7 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.colors.gray};
 `;
 
-export const StyledForm = styled.form`
+export const StyledForm = styled.form<{ errors: any }>`
   height: 720px;
   width: 90%;
   margin: 55px auto;
@@ -52,10 +52,14 @@ export const StyledForm = styled.form`
     color: ${({ theme }) => theme.colors.darkBlue};
     font-size: 15px;
     font-weight: 400;
-
-    &:focus {
-      outline: 1px solid ${({ theme }) => theme.colors.blue};
-    }
+    position: relative;
+    border: ${({ theme, errors }) => {
+      if (errors.title) {
+        return `1px solid ${theme.colors.error}`;
+      } else {
+        return `none`;
+      }
+    }};
   }
 
   select {
@@ -85,9 +89,13 @@ export const StyledForm = styled.form`
     font-size: 15px;
     font-weight: 400;
 
-    &:focus {
-      outline: 1px solid ${({ theme }) => theme.colors.blue};
-    }
+    border: ${({ theme, errors }) => {
+      if (errors.description) {
+        return `1px solid ${theme.colors.error}`;
+      } else {
+        return `none`;
+      }
+    }};
   }
 
   input[type='submit'] {
@@ -116,4 +124,13 @@ export const StyledForm = styled.form`
     border: none;
     border-radius: 10px;
   }
+`;
+
+export const StyledError = styled.p<{ margin: number }>`
+  font-size: 14px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.error};
+  margin-top: ${({ margin }) => margin + 'px'};
+  padding-bottom: ${({ margin }) => (margin === 24 ? '10px' : '24px')};
+  padding-left: 2px;
 `;

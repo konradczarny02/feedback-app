@@ -1,13 +1,32 @@
 import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 
+export type SortType = 'Bug' | 'Enhancement' | 'UX' | 'UI' | 'Feature';
+
 type SuggestionType = {
   id: string;
   title: string;
   description: string;
-  type: 'Bug' | 'Enhancement' | 'UX' | 'UI' | 'Feature';
+  type: SortType;
   comments: number;
   upvotes: number;
+  suggestionStatus: 'Planned' | 'In-Progress' | 'Live';
 };
+
+type Payload = {
+  title: string;
+  description: string;
+  type: SortType;
+};
+
+const addSuggestion = ({ title, description, type }: Payload): SuggestionType => ({
+  id: nanoid(),
+  title,
+  description,
+  type,
+  comments: 0,
+  upvotes: 0,
+  suggestionStatus: 'Planned',
+});
 
 const initialState: SuggestionType[] = [
   {
@@ -17,6 +36,7 @@ const initialState: SuggestionType[] = [
     type: 'Enhancement',
     comments: 2,
     upvotes: 112,
+    suggestionStatus: 'Planned',
   },
   {
     id: nanoid(),
@@ -25,6 +45,7 @@ const initialState: SuggestionType[] = [
     type: 'Feature',
     comments: 4,
     upvotes: 99,
+    suggestionStatus: 'Live',
   },
   {
     id: nanoid(),
@@ -33,6 +54,7 @@ const initialState: SuggestionType[] = [
     type: 'Feature',
     comments: 2,
     upvotes: 65,
+    suggestionStatus: 'In-Progress',
   },
   {
     id: nanoid(),
@@ -41,6 +63,7 @@ const initialState: SuggestionType[] = [
     type: 'Enhancement',
     comments: 2,
     upvotes: 51,
+    suggestionStatus: 'Planned',
   },
   {
     id: nanoid(),
@@ -49,6 +72,7 @@ const initialState: SuggestionType[] = [
     type: 'Feature',
     comments: 3,
     upvotes: 42,
+    suggestionStatus: 'Live',
   },
   {
     id: nanoid(),
@@ -57,13 +81,21 @@ const initialState: SuggestionType[] = [
     type: 'Bug',
     comments: 0,
     upvotes: 3,
+    suggestionStatus: 'Planned',
   },
 ];
 
 export const suggestionsSlice = createSlice({
   name: 'suggestions',
   initialState,
-  reducers: {},
+  reducers: {
+    add: (state, action: PayloadAction<Payload>) => {
+      const suggestion = addSuggestion(action.payload);
+      state.push(suggestion);
+    },
+  },
 });
+
+export const { add } = suggestionsSlice.actions;
 
 export default suggestionsSlice.reducer;

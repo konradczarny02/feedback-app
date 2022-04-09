@@ -13,6 +13,7 @@ interface colorsInterface {
   white: Color;
   darkerWhite: Color;
   hover: Color;
+  error: Color;
 }
 
 interface fontsInterface {
@@ -43,6 +44,7 @@ export const theme: themeInterface = {
     white: '#FFFFFF',
     darkerWhite: '#F7F8FD',
     hover: '#CFD7FF',
+    error: '#D73737',
   },
   fonts: {
     h1: '24px',
