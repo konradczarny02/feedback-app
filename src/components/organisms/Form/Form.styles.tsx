@@ -53,13 +53,23 @@ export const StyledForm = styled.form<{ errors: any }>`
     font-size: 15px;
     font-weight: 400;
     position: relative;
-    border: ${({ theme, errors }) => {
+    outline: ${({ theme, errors }) => {
       if (errors.title) {
         return `1px solid ${theme.colors.error}`;
       } else {
         return `none`;
       }
     }};
+
+    &:focus {
+      outline: ${({ theme, errors }) => {
+        if (errors.title) {
+          return `1px solid ${theme.colors.error}`;
+        } else {
+          return `1px solid ${theme.colors.blue}`;
+        }
+      }};
+    }
   }
 
   select {
@@ -93,13 +103,23 @@ export const StyledForm = styled.form<{ errors: any }>`
       height: 96px;
     }
 
-    border: ${({ theme, errors }) => {
+    outline: ${({ theme, errors }) => {
       if (errors.description) {
         return `1px solid ${theme.colors.error}`;
       } else {
         return `none`;
       }
     }};
+
+    &:focus {
+      outline: ${({ theme, errors }) => {
+        if (errors.description) {
+          return `1px solid ${theme.colors.error}`;
+        } else {
+          return `1px solid ${theme.colors.blue}`;
+        }
+      }};
+    }
   }
 
   input[type='submit'] {
