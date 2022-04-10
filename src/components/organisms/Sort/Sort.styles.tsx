@@ -13,7 +13,7 @@ export const SortWrapper = styled.div`
   p {
     font-weight: 400;
     font-size: 14px;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.lightGray};
   }
 
   span {
@@ -22,6 +22,19 @@ export const SortWrapper = styled.div`
 
   svg {
     display: none;
+  }
+
+  select {
+    color: ${({ theme }) => theme.colors.lightGray};
+    font-size: 14px;
+    font-weight: 700;
+    background: transparent;
+    border: none;
+    margin-left: 4px;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   @media (min-width: 768px) {

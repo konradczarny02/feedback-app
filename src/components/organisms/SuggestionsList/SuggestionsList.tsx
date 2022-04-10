@@ -7,7 +7,9 @@ import { useEffect, useState } from 'react';
 const SuggestionsList = () => {
   const suggestions = useAppSelector((state) => state.suggestions);
   const filter = useAppSelector((state) => state.filter);
+  const sort = useAppSelector((state) => state.sort.sort);
   const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions);
+  const bot = [...filteredSuggestions].sort((a, b) => a.upvotes - b.upvotes);
 
   useEffect(() => {
     if (filter.filter === 'All') {
