@@ -30,4 +30,8 @@ export const Wrapper = styled.div`
     margin-bottom: 24px;
     text-align: center;
   }
+
+  @media (min-width: 768px) {
+    max-width: 900px;
+  }
 `;

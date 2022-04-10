@@ -89,6 +89,10 @@ export const StyledForm = styled.form<{ errors: any }>`
     font-size: 15px;
     font-weight: 400;
 
+    @media (min-width: 768px) {
+      height: 96px;
+    }
+
     border: ${({ theme, errors }) => {
       if (errors.description) {
         return `1px solid ${theme.colors.error}`;
@@ -110,6 +114,10 @@ export const StyledForm = styled.form<{ errors: any }>`
     border: none;
     border-radius: 10px;
     margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      width: 150px;
+    }
   }
 
   input[type='reset'] {
@@ -123,6 +131,10 @@ export const StyledForm = styled.form<{ errors: any }>`
     background-color: ${({ theme }) => theme.colors.darkGray};
     border: none;
     border-radius: 10px;
+
+    @media (min-width: 768px) {
+      width: 96px;
+    }
   }
 `;
 

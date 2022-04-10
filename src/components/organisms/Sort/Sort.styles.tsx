@@ -27,6 +27,7 @@ export const SortWrapper = styled.div`
   @media (min-width: 768px) {
     height: 72px;
     width: 90%;
+    max-width: 900px;
     border-radius: 10px;
     margin: 40px auto 24px;
     justify-content: flex-start;
@@ -46,5 +47,10 @@ export const SortWrapper = styled.div`
     svg {
       display: block;
     }
+  }
+
+  @media (min-width: 1440px) {
+    grid-column: 2/3;
+    margin-top: 0;
   }
 `;

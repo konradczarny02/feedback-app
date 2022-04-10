@@ -5,10 +5,11 @@ import Sidebar from 'components/organisms/Sidebar/Sidebar';
 import Sort from 'components/organisms/Sort/Sort';
 import SuggestionsList from 'components/organisms/SuggestionsList/SuggestionsList';
 import DesktopNavigation from 'components/organisms/DesktopNavigation/DesktopNavigation';
+import { Wrapper } from 'pages/Homepage.styles';
 
 const Homepage = () => {
   return (
-    <>
+    <Wrapper>
       <NavigationProvider>
         <MobileNavigation />
         <Background />
@@ -17,7 +18,7 @@ const Homepage = () => {
       <DesktopNavigation />
       <Sort />
       <SuggestionsList />
-    </>
+    </Wrapper>
   );
 };
 

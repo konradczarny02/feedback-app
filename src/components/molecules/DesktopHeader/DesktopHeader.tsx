@@ -11,9 +11,10 @@ export const DesktopHeaderWrapper = styled.header`
   background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   padding-bottom: 24px;
+  padding-left: 24px;
 `;
 
 const DesktopHeader = () => {
