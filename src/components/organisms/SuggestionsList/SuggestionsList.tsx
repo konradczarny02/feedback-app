@@ -9,7 +9,6 @@ const SuggestionsList = () => {
   const filter = useAppSelector((state) => state.filter);
   const sort = useAppSelector((state) => state.sort.sort);
   const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions);
-  const bot = [...filteredSuggestions].sort((a, b) => a.upvotes - b.upvotes);
 
   useEffect(() => {
     if (filter.filter === 'All') {
@@ -18,6 +17,22 @@ const SuggestionsList = () => {
       setFilteredSuggestions(suggestions.filter((suggestion) => suggestion.type === filter.filter));
     }
   }, [filter]);
+
+  useEffect(() => {
+    switch (sort) {
+      case 'Most Upvotes':
+        setFilteredSuggestions([...filteredSuggestions].sort((a, b) => b.upvotes - a.upvotes));
+        break;
+      case 'Least Upvotes':
+        setFilteredSuggestions([...filteredSuggestions].sort((a, b) => a.upvotes - b.upvotes));
+        break;
+      case 'Most Comments':
+        setFilteredSuggestions([...filteredSuggestions].sort((a, b) => b.comments - a.comments));
+        break;
+      case 'Least Comments':
+        setFilteredSuggestions([...filteredSuggestions].sort((a, b) => a.comments - b.comments));
+    }
+  }, [sort, filteredSuggestions]);
 
   return (
     <>
