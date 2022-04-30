@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, ReactNode } from 'react';
 
 interface NavigationContextInterface {
   isOpen: boolean;
@@ -6,7 +6,7 @@ interface NavigationContextInterface {
 }
 
 type NavigationProviderProps = {
-  children: React.ReactNode[];
+  children: ReactNode[];
 };
 
 export const NavigationContext = createContext<NavigationContextInterface>({ isOpen: false, handleOpen: () => {} });
