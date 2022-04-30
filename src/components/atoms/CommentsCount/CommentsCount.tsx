@@ -3,11 +3,12 @@ import { ReactComponent as CommentsIcon } from 'assets/images/icons/commentIcon.
 
 type CommentsProps = {
   commentsNumber: number;
+  id: string;
 };
 
-const CommentsCount = ({ commentsNumber }: CommentsProps) => {
+const CommentsCount = ({ commentsNumber, id }: CommentsProps) => {
   return (
-    <StyledCommentCount>
+    <StyledCommentCount to={`details/${id}`}>
       <CommentsIcon />
       <p>{commentsNumber}</p>
     </StyledCommentCount>

@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const StyledCommentCount = styled.div`
+export const StyledCommentCount = styled(Link)`
   height: 32px;
   display: flex;
   align-items: center;
   padding: 6px 2px;
+  text-decoration: none;
+  cursor: pointer;
 
   p {
     font-size: 13px;

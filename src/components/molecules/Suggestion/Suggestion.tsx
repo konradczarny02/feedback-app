@@ -5,6 +5,7 @@ import { StyledSuggestion, StyledDescription } from 'components/molecules/Sugges
 
 type SuggestionProps = {
   data: {
+    id: string;
     title: string;
     description: string;
     type: 'Bug' | 'Enhancement' | 'UX' | 'UI' | 'Feature';
@@ -13,7 +14,7 @@ type SuggestionProps = {
   };
 };
 
-const Suggestion = ({ data: { title, description, type, upvotes, comments } }: SuggestionProps) => {
+const Suggestion = ({ data: { id, title, description, type, upvotes, comments } }: SuggestionProps) => {
   return (
     <StyledSuggestion>
       <h3>{title}</h3>
@@ -22,7 +23,7 @@ const Suggestion = ({ data: { title, description, type, upvotes, comments } }: S
         <Filter filterName={type} />
       </span>
       <Upvotes upvotesNumber={upvotes} />
-      <CommentsCount commentsNumber={comments} />
+      <CommentsCount id={id} commentsNumber={comments} />
     </StyledSuggestion>
   );
 };
